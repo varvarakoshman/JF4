@@ -16,13 +16,13 @@ public class Main {
         ArrayList<String> list2 = new ArrayList<>();
         list2.add("mcconaughey");
         collection.addFilm("true detective", list2);
-        ByteArrayOutputStream os = collection.serializing(collection);
+        ByteArrayOutputStream os = SerializingUtilClass.serializing(collection);
         os.reset();
         collection.addActor("true detective", "farrell");
-        collection.removeActor("method", "serebrennikov");
+        collection.removeActor("method", "serebryakov");
         collection.addFilm("mud", list2);
-        os = collection.serializing(collection);
-        collection.deserializing(os);
+        os = SerializingUtilClass.serializing(collection);
+        SerializingUtilClass.deserializing(os);
         os.close();
     }
 }
