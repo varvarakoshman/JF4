@@ -1,0 +1,17 @@
+package task1;
+
+import java.util.Locale;
+import java.util.ResourceBundle;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.print("language: ");
+        Scanner in = new Scanner(System.in);
+        Locale locale = new Locale(in.nextLine());
+        ResourceBundle bundle = ResourceBundle.getBundle("task1.ClassBundle", locale);
+        bundle.keySet().forEach(System.out::println);
+        System.out.println("question: ");
+        System.out.println(bundle.getObject(in.nextLine()));
+    }
+}
