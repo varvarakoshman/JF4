@@ -1,5 +1,6 @@
 package task4;
 
+import lombok.Cleanup;
 import lombok.SneakyThrows;
 
 import java.io.ByteArrayOutputStream;
@@ -16,13 +17,13 @@ public class Main {
         ArrayList<String> list2 = new ArrayList<>();
         list2.add("mcconaughey");
         collection.addFilm("true detective", list2);
-        ByteArrayOutputStream os = SerializingUtilClass.serializing(collection);
-        os.reset();
+
+        @Cleanup ByteArrayOutputStream os = SerializingUtilClass.serializing(collection);
         collection.addActor("true detective", "farrell");
         collection.removeActor("method", "serebryakov");
         collection.addFilm("mud", list2);
+        os.reset();
         os = SerializingUtilClass.serializing(collection);
         SerializingUtilClass.deserializing(os);
-        os.close();
     }
 }
