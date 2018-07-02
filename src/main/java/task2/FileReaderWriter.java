@@ -14,28 +14,28 @@ public class FileReaderWriter {
     public static void main(String[] args) {
         try {
             BufferedReader codeFile = new BufferedReader(new FileReader("Files\\task1\\code.txt"));
-            Scanner scan_code = new Scanner(codeFile);
+            Scanner scanCode = new Scanner(codeFile);
             BufferedReader wordsFile = new BufferedReader(new FileReader("Files\\task1\\keywords.txt"));
-            Scanner scan_words = new Scanner(wordsFile);
-            ArrayList<String> keywords_chars = new ArrayList();
-            ArrayList<String> code_chars = new ArrayList<>();
+            Scanner scanWords = new Scanner(wordsFile);
+            ArrayList<String> keywordsChars = new ArrayList();
+            ArrayList<String> codeChars = new ArrayList<>();
             Pattern p = Pattern.compile("^[a-zA-Z]+$");
             String read;
-            while (scan_code.hasNext()) {
-                read = scan_code.next();
+            while (scanCode.hasNext()) {
+                read = scanCode.next();
                 if (p.matcher(read).matches()) {
-                    code_chars.add(read);
+                    codeChars.add(read);
                 }
             }
-            while (scan_words.hasNext()) {
-                keywords_chars.add(scan_words.next());
+            while (scanWords.hasNext()) {
+                keywordsChars.add(scanWords.next());
             }
             codeFile.close();
             wordsFile.close();
             int count = 0;//число ключевых слов в коде
             BufferedWriter out = new BufferedWriter(new FileWriter("Files\\task2\\result.txt"));
-            for(String word: code_chars){
-                if (keywords_chars.contains(word)){
+            for(String word: codeChars){
+                if (keywordsChars.contains(word)){
                     count++;
                     out.write(word);
                     out.write("\n");
