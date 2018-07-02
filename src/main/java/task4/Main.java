@@ -1,14 +1,17 @@
 package task4;
 
+import lombok.SneakyThrows;
+
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class Main {
+    @SneakyThrows
     public static void main(String[] args) {
         Collection collection = new Collection();
         ArrayList<String> list1 = new ArrayList<>();
         list1.add("habensky");
-        list1.add("serebrennikov");
+        list1.add("serebryakov");
         collection.addFilm("method", list1);
         ArrayList<String> list2 = new ArrayList<>();
         list2.add("mcconaughey");
@@ -20,5 +23,6 @@ public class Main {
         collection.addFilm("mud", list2);
         os = collection.serializing(collection);
         collection.deserializing(os);
+        os.close();
     }
 }
