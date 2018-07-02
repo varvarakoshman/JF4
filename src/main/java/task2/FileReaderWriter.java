@@ -13,9 +13,9 @@ import java.util.regex.Pattern;
 public class FileReaderWriter {
     public static void main(String[] args) {
         try {
-            BufferedReader codeFile = new BufferedReader(new FileReader("C:\\Users\\user\\IdeaProjects\\epam JF\\JF4\\src\\main\\java\\task1\\code.txt"));
+            BufferedReader codeFile = new BufferedReader(new FileReader("Files\\task1\\code.txt"));
             Scanner scan_code = new Scanner(codeFile);
-            BufferedReader wordsFile = new BufferedReader(new FileReader("C:\\Users\\user\\IdeaProjects\\epam JF\\JF4\\src\\main\\java\\task1\\keywords.txt"));
+            BufferedReader wordsFile = new BufferedReader(new FileReader("Files\\task1\\keywords.txt"));
             Scanner scan_words = new Scanner(wordsFile);
             ArrayList<String> keywords_chars = new ArrayList();
             ArrayList<String> code_chars = new ArrayList<>();
@@ -33,7 +33,7 @@ public class FileReaderWriter {
             codeFile.close();
             wordsFile.close();
             int count = 0;//число ключевых слов в коде
-            BufferedWriter out = new BufferedWriter(new FileWriter("C:\\Users\\user\\IdeaProjects\\epam JF\\JF4\\src\\main\\java\\task2\\result.txt"));
+            BufferedWriter out = new BufferedWriter(new FileWriter("Files\\task2\\result.txt"));
             for(String word: code_chars){
                 if (keywords_chars.contains(word)){
                     count++;

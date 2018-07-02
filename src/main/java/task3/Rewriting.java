@@ -26,8 +26,8 @@ public class Rewriting {
 
     @SneakyThrows
     public static void main(String[] args) {
-        BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream("C:\\Users\\user\\IdeaProjects\\epam JF\\JF4\\src\\main\\java\\task3\\letters.txt"), "UTF8"));
-        BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("C:\\Users\\user\\IdeaProjects\\epam JF\\JF4\\src\\main\\java\\task3\\letters_copy.txt"), "UTF16"));
+        BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream("Files\\task3\\letters.txt"), "UTF8"));
+        BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("Files\\task3\\letters_copy.txt"), "UTF16"));
         rewrite(in,out);
     }
 }
